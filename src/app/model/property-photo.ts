@@ -1,0 +1,3 @@
+class PropertyPhoto {
+    file: UploadedFile;
+}

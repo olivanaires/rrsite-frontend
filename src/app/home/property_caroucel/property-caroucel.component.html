@@ -1,0 +1,14 @@
+<ngb-carousel style="height: calc(100% - 100px);">
+    <ng-template ngbSlide *ngFor="let listPropertyes of properties">
+        <div class="row" style="height: 100%;">
+            <div class="col" *ngFor="let prop of listPropertyes" style="height: 100%;">
+                <ngb-carousel #igamesPropertyCaroucel style="height: 50%; width: 100%;" [showNavigationArrows]="showNavigationArrows" [interval]="interval" [pauseOnHover]="pauseOnHover">
+                    <ng-template ngbSlide *ngFor="let image of prop.photos">
+                        <img src="{{'data:image/png;base64,' + image.file.data}}">
+                    </ng-template>
+                </ngb-carousel>
+                <div>{{prop.name}}</div>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>

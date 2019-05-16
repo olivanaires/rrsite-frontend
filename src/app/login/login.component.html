@@ -1,0 +1,23 @@
+<div class="fixed-center">
+    <div class="row justify-content-center">
+        <h3>{{title}}</h3><br>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="login(f.value)">
+        <div class="row justify-content-md-center">
+            <div class="form-group col col-12 col-md-6 col-lg-3">
+                <label for="usernameOrEmail">Usuário</label>
+                <input ngModel name="usernameOrEmail" id="usernameOrEmail" type="text" class="form-control" required>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="form-group col col-12 col-md-6 col-lg-3">
+                <label for="password">Senha</label>
+                <input ngModel name="password" id="password" type="password" class="form-control" required>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="position: relative;">
+            <button class="btn btn-primary">Entrar</button>
+        </div>
+    </form>
+</div>

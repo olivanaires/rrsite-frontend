@@ -1,0 +1,16 @@
+<h1>Enviar Banners</h1>
+
+<div>
+    <input #fileInput type="file" ng2FileSelect [uploader]="uploader" />
+
+    <div class="drop-box" ng2FileDrop [ngClass]="{'dragover': isDropOver}" [uploader]="uploader" (fileOver)="fileOverAnother($event)" (click)="fileClicked()">
+        <span class="drag-in-title">Clique para selecionar ou araste o arquivo</span>
+        <span class="drag-over-title">Solte o arquivo</span>
+    </div>
+</div>
+
+<ngb-carousel style="height: calc(100% - 100px);">
+    <ng-template ngbSlide *ngFor="let image of images">
+        <img src="{{'data:image/png;base64,' + image.data}}">
+    </ng-template>
+</ngb-carousel>
