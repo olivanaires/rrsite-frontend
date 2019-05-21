@@ -1,6 +1,17 @@
-<ngb-carousel style="height: calc(100% - 100px);">
-    <ng-template ngbSlide *ngFor="let image of images">
-        <img src="{{'data:image/png;base64,' + image.data}}">
-    </ng-template>
-</ngb-carousel>
-<app-property-caroucel></app-property-caroucel>
+<app-main-nav>
+    <span id="bannerSection">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let image of images">
+                <img class="img-caroucel" src="{{'data:image/png;base64,' + image.data}}">
+            </ng-template>
+        </ngb-carousel>
+    </span>
+
+    <span id="propertySection">
+        <app-property-caroucel></app-property-caroucel>
+    </span>
+
+    <span id="registerSection">
+        <app-register></app-register>
+    </span>
+</app-main-nav>

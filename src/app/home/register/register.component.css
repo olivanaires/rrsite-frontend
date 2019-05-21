@@ -1,0 +1,13 @@
+.box {
+    margin: 0 auto;
+    width: 50%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    background-color: white;
+}
+
+.fixed-center {
+    height: calc(100% - 100px);
+    padding-top: 100px;
+}

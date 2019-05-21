@@ -1,0 +1,32 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #ff19197d;
+    height: 100px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.space {
+    flex: 1 1 auto;
+}
+
+button.btn.btn-primary.sideMenu {
+    padding: 5px 5px 0px 5px;
+}

@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" position="end" fixedInViewport="false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item (click)="goToBanner()" href="#">Banner</a>
+            <a mat-list-item (click)="goToProperties()" href="#">Propriedades</a>
+            <a mat-list-item (click)="goToRegister()" href="#">Contato</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content cdkScrollable>
+        <mat-toolbar color="primary">
+            <img src="../../../assets/images/Logo-RR-2-black.png" alt="Logo" style="height: 100%; padding-top: 5px;">
+            <span class="space"></span>
+            <button class="btn btn-primary" (click)="logout()" *ngIf="isAuth">Sair</button>
+            <a class="btn btn-primary" routerLink="/login" *ngIf="!isAuth">Entrar</a>
+            <button class="btn btn-primary sideMenu" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

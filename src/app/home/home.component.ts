@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FileService } from '../service/file.service';
-import { _ } from 'underscore';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     templateUrl: './home.component.html',

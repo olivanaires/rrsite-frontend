@@ -1,31 +1,4 @@
-<div class="row fixed-top" style="background-color: #ff0000bf">
-    <span *ngIf="isUserAutenticated">
-        <div class="col">
-            <div class="d-inline-block">
-                <a class="btn btn-primary" routerLink="/">Home</a>
-            </div>
-            <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Cadastro</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <a ngbDropdownItem routerLink="/property">Propriedade</a>
-                    <a ngbDropdownItem routerLink="/file">Banner</a>
-                </div>
-            </div>
-        </div>
-    </span>
-
-    <div class="col text-right">
-        <div placement="top-right" class="d-inline-block">
-            <a *ngIf="!isUserAutenticated" class="btn btn-primary" routerLink="/register">Registrar-se</a>
-            <a *ngIf="!isUserAutenticated" class="btn btn-primary" routerLink="/login">Logar-se</a>
-            <button *ngIf="isUserAutenticated" class="btn btn-primary" (click)="logout()">Deslogar</button>
-        </div>
-    </div>
-</div>
-
-<main role="main" class="container">
-    <div class="bodyContent">
-        <ngb-alert *ngIf="message" type="success" (close)="message = null">{{ message }}</ngb-alert>
-        <router-outlet></router-outlet>
-    </div>
+<main role="main" style="display: contents;">
+    <ngb-alert *ngIf="message" type="success" (close)="message = null">{{ message }}</ngb-alert>
+    <router-outlet></router-outlet>
 </main>
