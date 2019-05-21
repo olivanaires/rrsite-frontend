@@ -19,6 +19,7 @@ import { AdminAuthGuard } from 'src/assets/interceptors/admin-auth-guard';
 import { PropertyComponent } from './property/property.component';
 import { ImagePreview } from 'src/assets/directives/image-preview.directive';
 import { PropertyCaroucelComponent } from './home/property_caroucel/property-caroucel.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PropertyCaroucelComponent } from './home/property_caroucel/property-car
     FileComponent,
     PropertyComponent,
     ImagePreview,
-    PropertyCaroucelComponent
+    PropertyCaroucelComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
