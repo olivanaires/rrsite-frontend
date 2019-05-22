@@ -5,3 +5,10 @@ div.fix-center {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+button.btn.btn-primary,
+a.btn.btn-primary {
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+}
