@@ -10,13 +10,24 @@ body {
     margin: 0;
 }
 
-ngb-carousel.carousel {
-    height: calc(100% - 100px);
-    background-color: #80808075;
-}
-
 .btn.btn-primary {
     border-color: #ff1919;
     background-color: #ff1919;
     margin: 0px 5px 0px 5px;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100% !important;
+}
+
+a.carousel-control-prev.ng-star-inserted,
+a.carousel-control-next.ng-star-inserted {
+    width: 60px !important;
+    opacity: 0 !important;
+}
+
+a.carousel-control-prev.ng-star-inserted:hover,
+a.carousel-control-next.ng-star-inserted:hover {
+    opacity: 1 !important;
 }

@@ -14,8 +14,6 @@ export class AuthService {
     private sigoutUrl = '/api/auth/signout';
     private signupUrl = '/api/auth/signup';
 
-    private isUserAutenticated: boolean = false;
-
     constructor(private http: HttpClient) { }
 
     login(user) {
@@ -50,19 +48,13 @@ export class AuthService {
         localStorage.removeItem("token");
     }
 
-    autoAuthUser() {
-        if (!localStorage.getItem("token")) {
-            return;
-        }
-        this.isUserAutenticated = true;
-    }
-
     getIsAuth() {
-        return this.isUserAutenticated;
-    }
+        if (localStorage.getItem('token')) {
+            return true;
+        } else {
+            return false;
 
-    setIsAuth(value) {
-        this.isUserAutenticated = value;
+        }
     }
 
 }

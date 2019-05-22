@@ -1,13 +1,18 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnInit } from "@angular/core";
 import { FileUploader } from 'ng2-file-upload';
 import { NgbTabset, NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { PropertyService } from '../service/property.service';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
+import { CityService } from '../service/city.service';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { Input } from '@angular/compiler/src/core';
 
 @Component({
-    templateUrl: './property.component.html'
+    templateUrl: './property.component.html',
+    styleUrls: ['./property.component.css']
 })
 export class PropertyComponent {
 
@@ -19,12 +24,20 @@ export class PropertyComponent {
     uploader: FileUploader;
     canNotChange: boolean = true;
 
+    cities: Array<City>;
+
     constructor(
         private app: AppComponent,
+        private cityService: CityService,
         private propertyService: PropertyService,
-        private router: Router) { }
+        private router: Router) {
+        this.cityService.loadAll().subscribe(res => {
+            this.cities = res;
+        });
+    }
 
     save(form: NgForm) {
+        console.log(form.value);
         this.propertyService.create(form.value)
             .subscribe((res: number) => {
                 this.setPropertyIdToUploaderURL(res);

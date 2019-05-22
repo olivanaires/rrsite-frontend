@@ -7,19 +7,20 @@ import { User } from '../model/user';
 import { Role } from '../model/role';
 
 @Component({
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-    title = 'Login'
+    title = 'Acessar Sistema'
 
     constructor(private app: AppComponent,
         private authService: AuthService,
         private router: Router) { }
 
     ngOnInit(): void {
-        if (localStorage.getItem('token')) {
-            this.router.navigateByUrl("/");
+        if (this.authService.getIsAuth()) {
+            this.router.navigateByUrl("/dashboard");
         }
     }
 
@@ -27,10 +28,8 @@ export class LoginComponent implements OnInit {
         this.authService.login(user)
             .subscribe(
                 (user: User) => {
-                    this.app.isUserAutenticated = true;
                     this.authService.storeUser(user);
-                    this.authService.setIsAuth(true);
-                    this.router.navigateByUrl("/");
+                    this.router.navigateByUrl("/dashboard");
                 },
                 (ex: HttpErrorResponse) => {
                     this.app.changeSuccessMessage('success', ex.message);

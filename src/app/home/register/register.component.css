@@ -11,3 +11,8 @@
     height: calc(100% - 100px);
     padding-top: 100px;
 }
+
+div.backgroundImage {
+    background-image: url("/assets/images/Logo-RR-2-black-opaque.png");
+    background-size: 350px;
+}

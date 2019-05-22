@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-    width: 200px;
+    width: 250px;
 }
 
 .sidenav .mat-toolbar {
@@ -14,7 +14,7 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: #ff19197d;
+    background-color: #ff1919;
     height: 100px;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19) !important;
 }
@@ -29,4 +29,8 @@
 
 button.btn.btn-primary.sideMenu {
     padding: 5px 5px 0px 5px;
+}
+
+.scrollable {
+    scroll-padding-top: 100px;
 }

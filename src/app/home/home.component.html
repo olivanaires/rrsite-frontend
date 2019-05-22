@@ -1,5 +1,5 @@
 <app-main-nav>
-    <span id="bannerSection">
+    <span id="banner-section">
         <ngb-carousel>
             <ng-template ngbSlide *ngFor="let image of images">
                 <img class="img-caroucel" src="{{'data:image/png;base64,' + image.data}}">
@@ -7,11 +7,11 @@
         </ngb-carousel>
     </span>
 
-    <span id="propertySection">
+    <span id="property-section">
         <app-property-caroucel></app-property-caroucel>
     </span>
 
-    <span id="registerSection">
+    <span id="register-section">
         <app-register></app-register>
     </span>
 </app-main-nav>

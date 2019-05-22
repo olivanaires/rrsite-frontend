@@ -1,0 +1,7 @@
+fieldset.fieldSetProperty {
+    width: 60%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    padding-top: 25px;
+}

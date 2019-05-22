@@ -1,0 +1,37 @@
+<mat-toolbar style="height: 300px; padding: 15px; background-color: #8B0000; margin-bottom: 25px;">
+    <button class="btn btn-primary logout-button" (click)="logout()" *ngIf="isAuth">Sair</button>
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="min-width: 100%;">
+            <span class="span-card col-12 col-xl-3 col-lg-4 col-md-5">
+                <a class="card-link" routerLink="/dashboard/property">IMÓVEIS
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </a>
+            </span>
+            <span class="span-card col-12 col-xl-3 col-lg-4 col-md-5">
+                <a class="card-link" routerLink="/dashboard/banner">BANNERS
+                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-images"></i>
+                    </div>
+                </a>
+            </span>
+            <span class="span-card col-12 col-xl-3 col-lg-4 col-md-5">
+                <a class="card-link" routerLink="#">CLIENTES
+                    <div class="icon icon-shape bg-red text-white rounded-circle shadow">
+                        <i class="fas fa-users text-white"></i>
+                    </div>
+                </a>
+            </span>
+            <span class="span-card col-12 col-xl-3 col-lg-4 col-md-5">
+                <a class="card-link" routerLink="#">ESPAÇO CONSTRUTORA
+                    <div class="icon icon-shape bg-gray text-white rounded-circle shadow">
+                        <i class="fas fa-hard-hat text-white"></i>
+                    </div>
+                </a>
+            </span>
+        </div>
+    </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

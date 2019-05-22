@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { CdkScrollable } from '@angular/cdk/overlay';
 import { AppComponent } from 'src/app/app.component';
@@ -10,42 +10,18 @@ import { Router } from '@angular/router';
     templateUrl: './main-nav.component.html',
     styleUrls: ['./main-nav.component.css']
 })
-export class MainNavComponent {
+export class MainNavComponent implements OnInit {
 
     @ViewChild(MatSidenav) drawer: MatSidenav;
     @ViewChild(CdkScrollable) scrollable: CdkScrollable;
 
     isAuth: boolean;
 
-    constructor(private app: AppComponent, private authService: AuthService, private router: Router) {
-        this.isAuth = this.app.isUserAutenticated;
+    constructor(private authService: AuthService) {
     }
 
-    logout() {
-        this.authService.logout().subscribe(res => {
-            this.app.isUserAutenticated = false;
-            this.authService.removeUser();
-            this.authService.setIsAuth(true);
-            this.router.navigate(["/"]);
-            location.reload();
-        });
-    }
-
-    goToBanner() {
-        this.scrollView(0);
-    }
-
-    goToProperties() {
-        this.scrollView(847);
-    }
-
-    goToRegister() {
-        this.scrollView(0);
-    }
-
-    private scrollView(value: number) {
-        this.scrollable.scrollTo({ bottom: value, behavior: 'smooth' });
-        this.drawer.toggle();
+    ngOnInit(): void {
+        this.isAuth = this.authService.getIsAuth();
     }
 
 }

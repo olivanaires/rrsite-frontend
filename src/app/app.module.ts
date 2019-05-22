@@ -11,12 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from './service/auth.service';
-import { FileComponent } from './file/file.component';
 import { FileService } from './service/file.service';
 import { AuthInterceptor } from 'src/assets/interceptors/auth-interceptor';
 import { HomeComponent } from './home/home.component';
 import { AdminAuthGuard } from 'src/assets/interceptors/admin-auth-guard';
-import { PropertyComponent } from './property/property.component';
 import { ImagePreview } from 'src/assets/directives/image-preview.directive';
 import { PropertyCaroucelComponent } from './home/property_caroucel/property-caroucel.component';
 import { MainNavComponent } from './home/main-nav/main-nav.component';
@@ -24,6 +22,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { RegisterComponent } from './home/register/register.component';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
     declarations: [
@@ -31,9 +30,6 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
         LoginComponent,
         RegisterComponent,
         HomeComponent,
-        FileComponent,
-        PropertyComponent,
-        ImagePreview,
         PropertyCaroucelComponent,
         MainNavComponent
     ],
@@ -51,7 +47,8 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
         MatSidenavModule,
         MatListModule,
         BrowserAnimationsModule,
-        ScrollDispatchModule
+        ScrollDispatchModule,
+        DashboardModule
     ],
     providers: [
         AuthService,
