@@ -12,12 +12,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { ImagePreview } from 'src/assets/directives/image-preview.directive';
+import { FileComponent } from '../file/file.component';
 
 @NgModule({
     declarations: [
         DashboardComponent,
         ImagePreview,
-        PropertyComponent
+        PropertyComponent,
+        FileComponent
     ],
     imports: [
         CommonModule,

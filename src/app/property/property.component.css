@@ -3,5 +3,8 @@ fieldset.fieldSetProperty {
     left: 50%;
     position: relative;
     transform: translateX(-50%);
-    padding-top: 25px;
+    margin: 15px 0px 25px 0px;
+    padding: 25px 10px 25px 10px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
 }

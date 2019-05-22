@@ -10,12 +10,6 @@ body {
     margin: 0;
 }
 
-.btn.btn-primary {
-    border-color: #ff1919;
-    background-color: #ff1919;
-    margin: 0px 5px 0px 5px;
-}
-
 .carousel-inner,
 .carousel-item {
     height: 100% !important;

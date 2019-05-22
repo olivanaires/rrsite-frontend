@@ -729,20 +729,54 @@ span.span-card {
 }
 
 a.card-link {
-    /* all: unset; */
+    all: unset;
     display: table-cell;
     vertical-align: middle;
     background-color: white;
     border-radius: 10px;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+a.card-link:active {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), inset 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 0 rgb(104, 103, 102), inset 4px 4px 4px rgb(104, 103, 102);
+    transform: translate(6px, 6px)
+}
+
+a.card-link:hover {
+    cursor: pointer;
 }
 
 button.logout-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 15px;
     width: 85px;
-    border-color: #ff1919;
-    background-color: #ff1919;
+    border-color: #0D6767;
+    background-color: #0D6767;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button.logout-button:active {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), inset 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translate(6px, 6px)
+}
+
+button.logout-button:focus {
+    border-color: #003D3D !important;
+    background-color: #003D3D !important;
+    outline-color: #003D3D !important;
+}
+
+mat-toolbar.mat-toolbar.dashboard-toolbar {
+    height: 300px;
+    padding: 15px;
+    background-color: #8B0000;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
