@@ -16,7 +16,7 @@
     z-index: 2;
     background-color: #ff1919;
     height: 100px;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19) !important;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .hidden {
@@ -27,10 +27,30 @@
     flex: 1 1 auto;
 }
 
-button.btn.btn-primary.sideMenu {
+button.btn.btn-primary,
+a.btn.btn-primary {
+    margin: 5px;
     padding: 5px 5px 0px 5px;
+    background-color: #2EA6A6;
+    border-color: #2EA6A6;
+    width: 100px;
+    height: 40px;
+}
+
+a.btn.btn-primary:focus,
+button.btn.btn-primary:focus {
+    border-color: #006464;
+    background-color: #006464;
+    outline-color: #006464;
 }
 
 .scrollable {
     scroll-padding-top: 100px;
+}
+
+mat-toolbar.sidnav-menu {
+    height: 100px;
+    color: white;
+    background-color: #ff1919 !important;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }

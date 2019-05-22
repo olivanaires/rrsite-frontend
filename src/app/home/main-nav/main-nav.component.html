@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" position="end" fixedInViewport="false">
-        <mat-toolbar>Menu</mat-toolbar>
+        <mat-toolbar class="sidnav-menu">Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item (click)="drawer.toggle()" href="#banner-section">Banner</a>
             <a mat-list-item (click)="drawer.toggle()" href="#property-section">Propriedades</a>
@@ -13,7 +13,7 @@
             <img src="assets/images/Logo-RR-2-black.png" alt="Logo" style="height: 100%; padding-top: 5px;">
             <span class="space"></span>
             <a class="btn btn-primary" routerLink="/login" *ngIf="!isAuth">Entrar</a>
-            <button class="btn btn-primary sideMenu" (click)="drawer.toggle()">
+            <button class="btn btn-primary" (click)="drawer.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
         </mat-toolbar>
