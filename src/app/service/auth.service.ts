@@ -12,7 +12,7 @@ export class AuthService {
 
     private siginUrl = '/api/auth/signin';
     private sigoutUrl = '/api/auth/signout';
-    private signupUrl = '/api/auth/signup';
+    private signupUrl = '/api/client/signup';
 
     constructor(private http: HttpClient) { }
 

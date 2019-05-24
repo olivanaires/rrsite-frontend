@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
     templateUrl: './dashboard.component.html',
@@ -9,6 +11,9 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
     isAuth: boolean;
+    _success = new Subject<string>();
+    type: string;
+    message: string;
 
     constructor(private authService: AuthService, private router: Router) { }
 
@@ -25,6 +30,18 @@ export class DashboardComponent implements OnInit {
         } else {
             this.router.navigateByUrl('/');
         }
+
+        this._success.pipe(
+            debounceTime(5000)
+        ).subscribe(() => this.message = null);
+    }
+
+
+
+    public changeSuccessMessage(type: string, message: string) {
+        this.message = message;
+        this.type = type;
+        this._success.next();
     }
 
 }

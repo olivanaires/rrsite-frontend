@@ -1,7 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
+import { HomeComponent } from '../home.component';
 import { AuthService } from 'src/app/service/auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-register',
@@ -12,18 +12,19 @@ export class RegisterComponent {
 
     title = 'Entre em Contato'
 
-    constructor(private app: AppComponent, private loginService: AuthService) { }
+    constructor(private home: HomeComponent, private authService: AuthService) { }
 
 
     register(client) {
-        this.loginService.register(client)
+        this.authService.register(client)
             .subscribe(
                 res => {
-                    this.app.changeSuccessMessage('success', 'Registro realizado com sucesso.');
+                    console.log("sucesso")
+                    this.home.changeSuccessMessage('success', 'Registro realizado com sucesso.');
                 },
                 (ex: HttpErrorResponse) => {
-                    this.app.changeSuccessMessage('error', ex.message);
-                });;
+                    this.home.changeSuccessMessage('error', ex.message);
+                });
     }
 
 }

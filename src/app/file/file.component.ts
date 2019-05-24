@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FileUploader, FileItem, ParsedResponseHeaders } from 'ng2-file-upload';
-import { AppComponent } from '../app.component';
 import { FileService } from '../service/file.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
     templateUrl: './file.component.html',
@@ -16,7 +16,7 @@ export class FileComponent implements OnInit {
     images: Array<UploadedFile>;
 
     constructor(
-        private app: AppComponent,
+        private dashboard: DashboardComponent,
         private fileService: FileService) { }
 
     ngOnInit(): void {
@@ -31,7 +31,7 @@ export class FileComponent implements OnInit {
             console.log(response);
         }
         this.uploader.onSuccessItem = () => {
-            this.app.changeSuccessMessage('success', 'File uploaded');
+            this.dashboard.changeSuccessMessage('success', 'File uploaded');
             this.loadImages();
         };
     }

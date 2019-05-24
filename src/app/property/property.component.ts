@@ -2,13 +2,9 @@ import { Component, ViewChild, OnInit } from "@angular/core";
 import { FileUploader } from 'ng2-file-upload';
 import { NgbTabset, NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { PropertyService } from '../service/property.service';
-import { AppComponent } from '../app.component';
-import { Router } from '@angular/router';
-import { NgForm, FormControl } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { CityService } from '../service/city.service';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-import { Input } from '@angular/compiler/src/core';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
     templateUrl: './property.component.html',
@@ -27,10 +23,9 @@ export class PropertyComponent {
     cities: Array<City>;
 
     constructor(
-        private app: AppComponent,
+        private dashboard: DashboardComponent,
         private cityService: CityService,
-        private propertyService: PropertyService,
-        private router: Router) {
+        private propertyService: PropertyService) {
         this.cityService.loadAll().subscribe(res => {
             this.cities = res;
         });
@@ -44,7 +39,7 @@ export class PropertyComponent {
                 this.canNotChange = false;
                 this.form = form;
                 this.tabSet.select('imagesTab');
-                this.app.changeSuccessMessage("success", "Propriedade cadastrada com sucesso!");
+                this.dashboard.changeSuccessMessage("success", "Propriedade cadastrada com sucesso!");
             });
 
     }
@@ -61,7 +56,7 @@ export class PropertyComponent {
                 removeAfterUpload: true
             });
         this.uploader.onCompleteAll = () => {
-            this.app.changeSuccessMessage("success", "Imagens enviadas com sucesso!");
+            this.dashboard.changeSuccessMessage("success", "Imagens enviadas com sucesso!");
             this.form.reset();
             this.tabSet.select('formTab');
         }

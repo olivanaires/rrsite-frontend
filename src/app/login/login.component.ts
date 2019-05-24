@@ -4,7 +4,6 @@ import { AuthService } from '../service/auth.service';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
-import { Role } from '../model/role';
 
 @Component({
     templateUrl: './login.component.html',
@@ -32,7 +31,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigateByUrl("/dashboard");
                 },
                 (ex: HttpErrorResponse) => {
-                    this.app.changeSuccessMessage('success', ex.message);
+                    // this.app.changeSuccessMessage('success', ex.message);
                 });;
     }
 }

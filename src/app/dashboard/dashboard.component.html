@@ -34,4 +34,5 @@
     </div>
 </mat-toolbar>
 
+<ngb-alert *ngIf="message" type="success" (close)="message = null">{{ message }}</ngb-alert>
 <router-outlet></router-outlet>
